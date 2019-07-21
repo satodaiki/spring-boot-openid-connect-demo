@@ -27,10 +27,13 @@ public class LoginController {
 
     /**
      * OpenID Connectを使用したログイン処理
+     * なんかうまくいかないのでコメントアウト（多分自分の理解が足りない）
      *
      * @return ホーム画面へリダイレクト
      */
-    @PostMapping("oauth2/login")
+/*
+
+    @PostMapping("")
     public String postLogin() {
 
         OAuth2AuthenticationToken auth = (OAuth2AuthenticationToken) SecurityContextHolder.getContext().getAuthentication();
@@ -48,4 +51,6 @@ public class LoginController {
         // return UrlBasedViewResolver.REDIRECT_URL_PREFIX + "home";
         return "login";
     }
+*/
+
 }

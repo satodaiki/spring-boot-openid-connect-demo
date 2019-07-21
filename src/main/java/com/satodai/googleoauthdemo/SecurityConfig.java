@@ -47,7 +47,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // .failureUrl("/login") // ログイン失敗時の遷移先
                 // .usernameParameter("userId") // ログインページのユーザーID
                 // .passwordParameter("password") // ログインページのパスワード
-                // .defaultSuccessUrl("/home",true); // ログイン成功時の遷移先
+                .defaultSuccessUrl("/home",true); // ログイン成功時の遷移先
         ;
 
         // CSRF対策を一時的に無効
