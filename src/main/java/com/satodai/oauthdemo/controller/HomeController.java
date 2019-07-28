@@ -1,4 +1,4 @@
-package com.satodai.googleoauthdemo.controller;
+package com.satodai.oauthdemo.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,6 +1,7 @@
-package com.satodai.googleoauthdemo;
+package com.satodai.oauthdemo;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -31,8 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         // ログイン不要ページとそれ以外の直リンクを禁止に
-        http
-                .authorizeRequests()
+        http.authorizeRequests()
                 .antMatchers("/webjars/**").permitAll()
                 .antMatchers("/css/**").permitAll()
                 .antMatchers("/login").permitAll()
@@ -40,14 +40,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated();
 
         // OAuth2を使用したログイン処理
-        http
-                .oauth2Login()
-                // .loginProcessingUrl("/login") // ログイン処理のパス
-                .loginPage("/login") // ログインページの指定
-                // .failureUrl("/login") // ログイン失敗時の遷移先
-                // .usernameParameter("userId") // ログインページのユーザーID
-                // .passwordParameter("password") // ログインページのパスワード
-                .defaultSuccessUrl("/home",true); // ログイン成功時の遷移先
+        http.openidLogin()
+                .loginProcessingUrl("/login")
+                .loginPage("/login")
+                .failureUrl("/login")
+                .defaultSuccessUrl("/home", true);
         ;
 
         // CSRF対策を一時的に無効

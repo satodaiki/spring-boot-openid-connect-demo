@@ -1,4 +1,4 @@
-package com.satodai.googleoauthdemo;
+package com.satodai.oauthdemo;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

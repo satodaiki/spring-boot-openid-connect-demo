@@ -1,13 +1,13 @@
-package com.satodai.googleoauthdemo;
+package com.satodai.oauthdemo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GoogleOauthDemoApplication {
+public class OauthDemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GoogleOauthDemoApplication.class, args);
+		SpringApplication.run(OauthDemoApplication.class, args);
 	}
 
 }
