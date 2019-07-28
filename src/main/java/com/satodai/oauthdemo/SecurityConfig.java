@@ -40,7 +40,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         // OAuth2を使用したログイン処理
         http.oauth2Login()
-                .loginProcessingUrl("/login") // ログイン処理のパス
+                // .loginProcessingUrl("/login") // ログイン処理のパス
                 .loginPage("/login") // ログインページの指定
                 .failureUrl("/login") // ログイン失敗時の遷移先
                 .defaultSuccessUrl("/home",true); // ログイン成功時の遷移先
